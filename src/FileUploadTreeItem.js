@@ -35,7 +35,7 @@ function FileUploadTreeItem({ label }) {
       <div style={{ display: "flex", alignItems: "center" }}>
         <input type="file" onChange={handleFileChange} />
         <button onClick={handleFileUpload} disabled={!file}>
-          Upload
+          Upload the file
         </button>
       </div>
     </TreeItem>
