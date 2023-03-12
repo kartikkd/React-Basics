@@ -1,0 +1,26 @@
+ ```
+ #!/bin/bash
+ 
+ TARGET="C:\devtools\Apache24\htdocs\my-app"
+ GIT_DIR=$(pwd)
+ BRANCH="dev"
+ 
+ while read oldrev newrev ref
+ do
+     # Only deploy when the dev branch is updated
+     if [[ $ref = "refs/heads/$BRANCH" ]]
+     then
+         echo "Deploying $BRANCH branch..."
+         
+         # Check out the latest version of the dev branch
+         git --work-tree=$TARGET --git-dir=$GIT_DIR checkout $BRANCH -f
+         
+         # Install dependencies and build the app
+         cd $TARGET
+         npm install
+         npm run build
+         
+         echo "Deployment complete."
+     fi
+ done
+ ```
