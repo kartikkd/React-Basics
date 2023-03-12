@@ -2,7 +2,7 @@
  #!/bin/bash
  
  TARGET="C:\devtools\Apache24\htdocs\my-app"
- GIT_DIR=$(pwd)
+ GIT_DIR="C:\React-basics\my-app\.git"
  BRANCH="dev"
  
  while read oldrev newrev ref
