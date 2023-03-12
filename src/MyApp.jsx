@@ -24,7 +24,7 @@ export function MyApp() {
                     <img src="account.png" />
                     </Avatar>
                 }
-                primaryTitle="My App New1"
+                primaryTitle="My App New2"
                 onLogoClick={handleLogoClick}
                 >
                 <ShellBarItem icon={addIcon} text="Add"  />
