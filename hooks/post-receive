@@ -15,6 +15,8 @@
          # Check out the latest version of the dev branch
          git --work-tree=$TARGET --git-dir=$GIT_DIR checkout $BRANCH -f
          
+          export NODE_ENV=production
+          
          # Install dependencies and build the app
          cd $TARGET
          npm install
