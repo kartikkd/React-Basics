@@ -1,6 +1,6 @@
 #!/bin/bash
  
-TARGET="C:\devtools\Apache24\htdocs\my-app1"
+TARGET="C:\devtools\Apache24\htdocs\my-app2"
 GIT_DIR="C:\React-basics\my-app\.git"
 BRANCH="dev"
  
@@ -21,7 +21,7 @@ do
         npm install
         npm run build
          
-        rsync -avz --delete build/ I556802@localhost:/devtools/Apache24/htdocs/my-app
+        rsync -avz --delete build/ I556802@localhost:/devtools/Apache24/htdocs/my-app2
 
         # Stop and restart Apache
         "C:\devtools\Apache24\bin\httpd.exe" -k stop
