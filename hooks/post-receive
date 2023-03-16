@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET="C:\devtools\Apache24\htdocs\my-app1"
+TARGET="C:\devtools\Apache24\htdocs\my-app2"
 GIT_DIR="C:\React-basics\my-app\.git"
 BRANCH="dev"
 HTTPD_PATH="C:\devtools\Apache24\bin\httpd.exe"
@@ -23,7 +23,7 @@ do
         npm run build
 
         # Copy the contents of the build folder to Apache's htdocs folder
-        cp -R build/* "C:\devtools\Apache24\htdocs\my-app"
+        cp -R build/* "C:\devtools\Apache24\htdocs\my-app2"
 
         # Restart Apache
         $HTTPD_PATH -k restart
