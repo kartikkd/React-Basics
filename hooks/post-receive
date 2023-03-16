@@ -1,8 +1,9 @@
 #!/bin/bash
- 
-TARGET="C:\devtools\Apache24\htdocs\my-app2"
+
+TARGET="C:\devtools\Apache24\htdocs\my-app1"
 GIT_DIR="C:\React-basics\my-app\.git"
 BRANCH="dev"
+HTTPD_PATH="C:\devtools\Apache24\bin\httpd.exe"
  
 while read oldrev newrev ref
 do
@@ -20,12 +21,12 @@ do
         cd $TARGET
         npm install
         npm run build
-         
-        rsync -avz --delete build/ I556802@localhost:/devtools/Apache24/htdocs/my-app2
 
-        # Stop and restart Apache
-        "C:\devtools\Apache24\bin\httpd.exe" -k stop
-        "C:\devtools\Apache24\bin\httpd.exe" -k start
+        # Copy the contents of the build folder to Apache's htdocs folder
+        cp -R build/* "C:\devtools\Apache24\htdocs\my-app"
+
+        # Restart Apache
+        $HTTPD_PATH -k restart
 
         echo "Deployment complete."
     fi
